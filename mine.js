@@ -1,5 +1,6 @@
 let board = document.querySelector('div.board');
 let blockBoard = [];
+let lives = 2;
 
 function gameGenerator() {
 
@@ -18,4 +19,6 @@ function gameGenerator() {
         column += 22;
     }
 }
+
 gameGenerator();
+

@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 div.board{
     width: 1000px;
     height: 600px;
@@ -15,6 +19,16 @@ div.blocks{
     position: absolute;
 }
 
+div.ball{
+    width: 10px;
+    height: 10px;
+    background: black;
+    border-radius: 5px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    z-index: 1;
+}
 div.desk {
     width: 100px;
     height: 10px;

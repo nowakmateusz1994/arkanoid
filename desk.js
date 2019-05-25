@@ -20,11 +20,3 @@ document.addEventListener('keydown', function(el){
         } 
     }
 });
-
-
-
-
-
-
-
-

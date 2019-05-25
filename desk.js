@@ -4,7 +4,11 @@ let desk = document.querySelector('div.desk');
 let borderRight = document.querySelector('div.board').offsetWidth - desk.offsetWidth;
 let borderLeft = document.querySelector('div.board').offsetLeft;
 
-var moveLeft = desk.offsetLeft;
+let moveLeft = desk.offsetLeft;
+
+let deskWidth = desk.offsetWidth ;
+let deskTop = desk.offsetTop;
+let deskHeight = desk.offsetHeight;
 
 document.addEventListener('keydown', function(el){
     if (el.keyCode == '39') {
@@ -22,9 +26,6 @@ document.addEventListener('keydown', function(el){
 });
 
 
-let deskRight = desk.offsetLeft + desk.offsetWidth;
-let deskTop = desk.offsetTop;
-let deskBottom = desk.offsetBottom;
 
 
 

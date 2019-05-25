@@ -18,7 +18,7 @@ function ballMove() {
     if (ballY == 0) {
         aY = 1
     } else if (ballY == borderBoardBottom - ball.offsetWidth) {
-       clearInterval(index)
+        clearInterval(index)
     }
 
     for (let i = 0; i < blockBoard.length; i++) {
@@ -28,13 +28,18 @@ function ballMove() {
         let blockBottom = blockBoard[i].offsetTop + blockBoard[i].offsetHeight;
 
         if (blockLeft <= ballX && ballX <= blockRight && blockTop <= ballY && ballY <= blockBottom) {
-            aX *= (-1)
             aY *= (-1)
             blockBoard[i].remove();
         }
     }
 
-    
+    if (moveLeft <= ballX && ballX <= (moveLeft + deskWidth) && deskTop <= ballY && ballY <= (deskTop + deskHeight)) {
+
+        aY *= (-1)
+        console.log('sadad')
+    }
+
+
 
     ballY += aY;
     ballX += aX;

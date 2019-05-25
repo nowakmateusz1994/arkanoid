@@ -1,0 +1,16 @@
+div.board{
+    width: 1000px;
+    height: 80vh;
+    margin: 10vh auto;
+    position: relative;
+    background: grey;
+    border: 1px solid black;
+}
+
+div.blocks{
+    height: 20px;
+    width: 90px;
+    background: red;
+    display: inline;
+    position: absolute;
+}

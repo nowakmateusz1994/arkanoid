@@ -4,6 +4,7 @@ let ballX = ball.offsetLeft;
 let ballY = ball.offsetTop;
 let aX = 1;
 let aY = 1;
+let index;
 
 let borderBoardRight = document.querySelector('div.board').offsetWidth;
 let borderBoardBottom = document.querySelector('div.board').offsetHeight;
@@ -17,14 +18,29 @@ function ballMove() {
     if (ballY == 0) {
         aY = 1
     } else if (ballY == borderBoardBottom - ball.offsetWidth) {
-        aY = -1
+       clearInterval(index)
     }
+
+    for (let i = 0; i < blockBoard.length; i++) {
+        let blockLeft = blockBoard[i].offsetLeft;
+        let blockRight = blockBoard[i].offsetLeft + blockBoard[i].offsetWidth;
+        let blockTop = blockBoard[i].offsetTop;
+        let blockBottom = blockBoard[i].offsetTop + blockBoard[i].offsetHeight;
+
+        if (blockLeft <= ballX && ballX <= blockRight && blockTop <= ballY && ballY <= blockBottom) {
+            aX *= (-1)
+            aY *= (-1)
+            blockBoard[i].remove();
+        }
+    }
+
+    
 
     ballY += aY;
     ballX += aX;
     ball.style.top = ballY + 'px';
     ball.style.left = ballX + 'px';
 }
-setTimeout(function(){
-    setInterval(ballMove, 25);
+setTimeout(function () {
+    index = setInterval(ballMove, 10);
 }, 1000)

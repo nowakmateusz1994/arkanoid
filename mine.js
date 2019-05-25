@@ -16,3 +16,6 @@ function gameGenerator() {
         column+=22;
     }
 }
+
+gameGenerator();
+

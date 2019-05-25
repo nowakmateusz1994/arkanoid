@@ -4,7 +4,7 @@
 
 div.board{
     width: 1000px;
-    height: 80vh;
+    height: 600px;
     margin: 10vh auto;
     position: relative;
     background: grey;
@@ -28,4 +28,12 @@ div.ball{
     top:50%;
     left:50%;
     z-index: 1;
+}
+div.desk {
+    width: 100px;
+    height: 10px;
+    background-color: yellow;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
 }

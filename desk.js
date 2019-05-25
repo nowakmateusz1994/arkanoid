@@ -22,6 +22,11 @@ document.addEventListener('keydown', function(el){
 });
 
 
+let deskRight = desk.offsetLeft + desk.offsetWidth;
+let deskTop = desk.offsetTop;
+let deskBottom = desk.offsetBottom;
+
+
 
 
 

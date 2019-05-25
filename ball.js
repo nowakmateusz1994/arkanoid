@@ -9,15 +9,19 @@ let index;
 let borderBoardRight = document.querySelector('div.board').offsetWidth;
 let borderBoardBottom = document.querySelector('div.board').offsetHeight;
 
+let scoresPoint = document.querySelector('span.scores');
+let score = 0;
+
 function ballMove() {
-    if (ballX == borderBoardRight - ball.offsetWidth) {
-        aX = -1;
+    if (ballX >= borderBoardRight - ball.offsetWidth) {
+        aX *= -1;
     } else if (ballX == 0) {
-        aX = 1;
+        aX *= 1;
     }
+
     if (ballY == 0) {
         aY = 1
-    } else if (ballY == borderBoardBottom - ball.offsetWidth) {
+    } else if (ballY >= borderBoardBottom - ball.offsetWidth) {
         clearInterval(index)
     }
 
@@ -30,6 +34,8 @@ function ballMove() {
         if (blockLeft <= ballX && ballX <= blockRight && blockTop <= ballY && ballY <= blockBottom) {
             aY *= (-1)
             blockBoard[i].remove();
+            score += 10;
+            scoresPoint.innerHTML = score;
         }
     }
 
@@ -39,6 +45,10 @@ function ballMove() {
         console.log('sadad')
     }
 
+    if (score >= 10) {
+        aX = 1.1;
+        aY = 1.1;
+    }
 
 
     ballY += aY;

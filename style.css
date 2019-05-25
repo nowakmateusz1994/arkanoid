@@ -18,5 +18,8 @@ div.blocks{
 div.desk {
     width: 100px;
     height: 10px;
+    background-color: yellow;
     position: absolute;
+    bottom: 10px;
+    left: 0;
 }
